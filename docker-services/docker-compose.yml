@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  django-server-db:
+    image: "postgres:13.4"
+    env_file: .env-db
+    volumes:
+      - django-server-postgres:/var/lib/postgresql/data
+    ports:
+      - ${POSTGRES_PORT}:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - dapp-0
+
+volumes:
+  django-server-postgres:
+
+networks:
+  dapp-0:

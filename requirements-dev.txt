@@ -1,0 +1,8 @@
+-r requirements.txt
+black
+pylint==2.13.9
+pylint-django
+mypy
+django-stubs
+requests
+types-requests

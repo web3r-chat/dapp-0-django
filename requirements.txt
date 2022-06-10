@@ -1,0 +1,13 @@
+Django
+psycopg2
+python-dotenv
+pydantic
+dj-database-url
+whitenoise
+uvicorn
+gunicorn
+django-ninja
+pyjwt
+aiohttp[speedups]
+ic-py
+django-cors-headers

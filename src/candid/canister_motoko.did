@@ -1,0 +1,19 @@
+type StatusCode = nat16;
+type Result_1 = 
+ variant {
+   err: StatusCode;
+   ok: text;
+ };
+type Result = 
+ variant {
+   err: StatusCode;
+   ok;
+ };
+service : {
+  greet: (text) -> (text);
+  save_django_session_key: (text, text, text) -> (Result);
+  session_password_check: (text, text) -> (Result);
+  session_password_create: () -> (Result_1);
+  session_password_delete: (text) -> (Result);
+  whoami: () -> (text);
+}
